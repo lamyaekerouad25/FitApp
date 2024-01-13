@@ -46,6 +46,7 @@ import pt.selfgym.ui.calendar.RunWorkoutFragment;
 import pt.selfgym.ui.workouts.AddExerciseFragment;
 import pt.selfgym.ui.workouts.EditWorkoutFragment;
 import pt.selfgym.ui.workouts.WorkoutFragment;
+package pt.selfgym.ui.workouts.PoseGraphic;
 
 public class MainActivity extends AppCompatActivity implements ActivityInterface {
 
@@ -81,6 +82,25 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         mServiceIntent = new Intent(this, mService.getClass());
         if (!NotificationService.IS_SERVICE_RUNNING) {
             startService(mServiceIntent);
+        }
+
+        // Bottom Navigation for the pose detection
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_pose_detection:
+                    Intent intent = new Intent(this, PoseDetectionActivity.class);
+                    startActivity(intent);
+                    return true;
+            }
+            return false;
+        });
+        // checking if there is the permision for the camera
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+            != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CAMERA},
+                MY_CAMERA_REQUEST_CODE);
         }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
