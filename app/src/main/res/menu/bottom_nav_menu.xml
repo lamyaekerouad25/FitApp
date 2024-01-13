@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/navigation_pose_detection"
+        android:icon="@drawable/ic_pose_detection"
+        android:title="@string/title_pose_detection"/>
     <item
         android:id="@+id/navigation_calendar"
         android:icon="@drawable/ic_calendar_black_24dp_foreground"
