@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+        <style name="Theme.SelfGym" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#DF6429</item>
+        <item name="colorPrimaryVariant">#DF6429</item>
+        <item name="colorOnPrimary">#091211</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#FA920F</item>
+        <item name="colorSecondaryVariant">#FA920F</item>
+        <item name="colorOnSecondary">#091211</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
